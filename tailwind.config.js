@@ -14,9 +14,10 @@ export default {
       },
       colors: {
         primary: "#3DBB47", // Custom primary color
-        secondary: "#2EA14A", // Custom secondary color
+        secondary: "#1A4F1E", // Custom secondary color
         hihglight: "#154119",
-        sub: "#F5F5F5",
+        background: "#ECF8ED",
+        sub: "#C3EAC6",
         footer: "#1C1C1C",
         // Add more custom colors as needed
       },
