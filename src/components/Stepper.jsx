@@ -3,6 +3,8 @@ import BookingInfo from "./StepOne/BookingInfo";
 import HomeRule from "./StepOne/HomeRule";
 import { delay, motion } from "framer-motion";
 import CaregiverPower from "./StepOne/CaregiverPower";
+import AgreeForm from "./StepOne/AgreeForm";
+import SuccessModal from "./StepOne/SuccessModal";
 
 const Stepper = ({ currentStep }) => {
   const steps = [
@@ -40,33 +42,36 @@ const Stepper = ({ currentStep }) => {
   return (
     <div className="w-full">
       <div className="flex items-center justify-between relative">
-        {steps.map((step) => (
-          <div key={step.number} className="flex flex-col items-center">
-            <div
-              className={`w-8 h-8 rounded-full text-[12px] font-bold flex items-center justify-center border border-primary ${
-                currentStep >= step.number
-                  ? "bg-primary text-white"
-                  : "bg-white text-primary"
-              }`}
-            >
-              {step.number}
+        {currentStep < 4 &&
+          steps.map((step) => (
+            <div key={step.number} className="flex flex-col items-center">
+              <div
+                className={`w-8 h-8 rounded-full text-[12px] font-bold flex items-center justify-center border border-primary ${
+                  currentStep >= step.number
+                    ? "bg-primary text-white"
+                    : "bg-white text-primary"
+                }`}
+              >
+                {step.number}
+              </div>
+              <span className={`mt-2 text-[10px] font-bold text-primary`}>
+                {step.label}
+              </span>
             </div>
-            <span className={`mt-2 text-[10px] font-bold text-primary`}>
-              {step.label}
-            </span>
-          </div>
-        ))}
+          ))}
       </div>
 
       {/* Progress Bar */}
-      <div className="mt-4 h-2 bg-sub rounded">
-        <div
-          className={`h-full bg-primary transition-all duration-300 ease-in-out rounded`}
-          style={{
-            width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
-          }}
-        />
-      </div>
+      {currentStep < 4 && (
+        <div className="mt-4 h-2 bg-sub rounded">
+          <div
+            className={`h-full bg-primary transition-all duration-300 ease-in-out rounded`}
+            style={{
+              width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
+            }}
+          />
+        </div>
+      )}
 
       <div className="mt-5">
         {currentStep === 1 && (
@@ -100,6 +105,28 @@ const Stepper = ({ currentStep }) => {
             exit="exit"
           >
             <CaregiverPower />
+          </motion.div>
+        )}
+        {currentStep === 4 && (
+          <motion.div
+            key={4}
+            variants={formVarient}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <AgreeForm />
+          </motion.div>
+        )}
+        {currentStep === 5 && (
+          <motion.div
+            key={5}
+            variants={formVarient}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <SuccessModal />
           </motion.div>
         )}
       </div>

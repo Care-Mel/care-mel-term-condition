@@ -46,7 +46,7 @@ const CaregiverPower = () => {
   ];
 
   return (
-    <div className="mt-10 overflow-y-auto h-[50vh]">
+    <div className="mt-10 overflow-y-auto h-[45vh]">
       <div className="space-y-2">
         {infoList.map((item, index) => (
           <div key={index} className="mb-10">
