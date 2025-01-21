@@ -1,16 +1,20 @@
-import React from "react";
+// import React from "react";
 import BookingInfo from "./StepOne/BookingInfo";
 import HomeRule from "./StepOne/HomeRule";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import CaregiverPower from "./StepOne/CaregiverPower";
 import AgreeForm from "./StepOne/AgreeForm";
-import SuccessModal from "./StepOne/SuccessModal";
+import CareRule from "./StepOne/CareRule";
+// import SuccessModal from "./StepOne/SuccessModal";
+// import { Stepper } from "react-form-stepper";
 
-const Stepper = ({ currentStep }) => {
+const StepperForm = ({ currentStep }) => {
+  // console.log(currentStep);
   const steps = [
     { label: "စည်းမျဉ်းစည်းကမ်း", number: 1 },
     { label: "လုပ်ငန်းစဉ်တာ", number: 2 },
     { label: "သဘောတူညီချက်", number: 3 },
+    { label: "သဘောတူညီချက်", number: 4 },
   ];
 
   const formVarient = {
@@ -40,51 +44,36 @@ const Stepper = ({ currentStep }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full h-[60vh]">
       <div className="flex items-center justify-between relative">
-        {currentStep < 4 &&
+        {currentStep < 6 &&
           steps.map((step) => (
-            <div key={step.number} className="flex flex-col items-center">
+            <div key={step.number} className="flex flex-col items-center z-10">
               <div
-                className={`w-8 h-8 rounded-full text-[12px] font-bold flex items-center justify-center border border-primary ${
-                  currentStep >= step.number
-                    ? "bg-primary text-white"
+                className={`w-8 h-8 rounded-full text-[12px] font-bold flex items-center justify-center ${
+                  currentStep - 1 >= step.number
+                    ? "bg-primary text-white transition-all duration-1000 ease-in-out"
                     : "bg-white text-primary"
                 }`}
               >
                 {step.number}
               </div>
-              <span className={`mt-2 text-[10px] font-bold text-primary`}>
-                {step.label}
-              </span>
             </div>
           ))}
+        {/* Progress Bar */}
+        {currentStep < 6 && (
+          <div className="mt-4 h-2 bg-white rounded absolute top-[-3px] left-0 w-full">
+            <div
+              className={`h-full bg-primary transition-all duration-300 ease-in-out rounded`}
+              style={{
+                width: `${((currentStep - 2) / (steps.length - 1)) * 100}%`,
+              }}
+            />
+          </div>
+        )}
       </div>
 
-      {/* Progress Bar */}
-      {currentStep < 4 && (
-        <div className="mt-4 h-2 bg-sub rounded">
-          <div
-            className={`h-full bg-primary transition-all duration-300 ease-in-out rounded`}
-            style={{
-              width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
-            }}
-          />
-        </div>
-      )}
-
       <div className="mt-5">
-        {currentStep === 1 && (
-          <motion.div
-            key={1}
-            variants={formVarient}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <BookingInfo />
-          </motion.div>
-        )}
         {currentStep === 2 && (
           <motion.div
             key={2}
@@ -93,7 +82,7 @@ const Stepper = ({ currentStep }) => {
             animate="visible"
             exit="exit"
           >
-            <HomeRule />
+            <BookingInfo />
           </motion.div>
         )}
         {currentStep === 3 && (
@@ -104,7 +93,7 @@ const Stepper = ({ currentStep }) => {
             animate="visible"
             exit="exit"
           >
-            <CaregiverPower />
+            <CareRule />
           </motion.div>
         )}
         {currentStep === 4 && (
@@ -115,7 +104,7 @@ const Stepper = ({ currentStep }) => {
             animate="visible"
             exit="exit"
           >
-            <AgreeForm />
+            <HomeRule />
           </motion.div>
         )}
         {currentStep === 5 && (
@@ -126,12 +115,34 @@ const Stepper = ({ currentStep }) => {
             animate="visible"
             exit="exit"
           >
-            <SuccessModal />
+            <CaregiverPower />
           </motion.div>
         )}
+        {currentStep === 6 && (
+          <motion.div
+            key={6}
+            variants={formVarient}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <AgreeForm />
+          </motion.div>
+        )}
+        {/* {currentStep === 5 && (
+          <motion.div
+            key={5}
+            variants={formVarient}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <SuccessModal />
+          </motion.div>
+        )} */}
       </div>
     </div>
   );
 };
 
-export default Stepper;
+export default StepperForm;

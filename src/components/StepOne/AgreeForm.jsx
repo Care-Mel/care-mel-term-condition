@@ -8,36 +8,36 @@ function AgreeForm({ currentStep }) {
   const [NRC, setNrc] = useState("");
 
   return (
-    <div className="h-[57.2vh] mt-10 flex flex-col justify-end gap-5">
-      <div className="flex bg-white items-center border-2 border-gray-300 rounded-md shadow-md">
-        <span className="p-2 bg-white">
-          <FaRegUserCircle size={20} className="text-gray-500" />
-        </span>
+    <div className="flex flex-col justify-end gap-5">
+      <div className="flex p-2 bg-white items-center border-2 border-gray-300 rounded-full overflow-hidden shadow-md">
         <input
           type="text"
-          placeholder="Name"
+          placeholder="နာမည်"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
             localStorage.setItem("name", e.target.value);
           }}
-          className="p-2 border-none focus:outline-none flex-grow"
+          className="ps-5 text-[18px]  border-none focus:outline-none flex-grow"
         />
-      </div>
-      <div className="flex bg-white items-center border-2 border-gray-300 rounded-md shadow-md">
         <span className="p-2 bg-white">
-          <FaRegAddressCard size={20} className="text-gray-500" />
+          <FaRegUserCircle size={30} className="text-gray-400 mr-5" />
         </span>
+      </div>
+      <div className="flex p-2 bg-white items-center border-2 border-gray-300 rounded-full overflow-hidden shadow-md">
         <input
           type="text"
-          placeholder="NRC Number"
+          placeholder="မှတ်ပုံတင် နံပါတ်"
           value={NRC}
           onChange={(e) => {
             setNrc(e.target.value);
             localStorage.setItem("NRC", e.target.value);
           }}
-          className="p-2 border-none focus:outline-none flex-grow"
+          className="ps-5 text-[18px] border-none focus:outline-none flex-grow"
         />
+        <span className="p-2 bg-white">
+          <FaRegAddressCard size={30} className="text-gray-400 mr-5" />
+        </span>
       </div>
     </div>
   );
