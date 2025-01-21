@@ -73,7 +73,7 @@ function App() {
             {currentStep > 2 && (
               <button
                 onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 1))}
-                className="bg-primary w-full text-white px-4 py-3 font-bold text-[14px] rounded-3xl mr-2 transition-all duration-300 ease-in-out"
+                className="bg-primary w-full text-white px-4 py-3 font-bold text-[14px] rounded-3xl mr-2 transition-all duration-300 ease-in-out active:bg-secondary"
               >
                 နောက်သို့
               </button>
@@ -84,7 +84,7 @@ function App() {
                   setCurrentStep((prev) => Math.min(prev + 1, 6));
                   handleSubmission();
                 }}
-                className="w-full bg-primary text-white px-4 py-3 rounded-3xl font-bold text-[14px] flex justify-center items-center transition-all duration-300 ease-in-out"
+                className="w-full bg-primary text-white px-4 py-3 rounded-3xl font-bold text-[14px] flex justify-center items-center transition-all duration-300 ease-in-out active:bg-secondary"
                 // disabled={currentStep === 7}
               >
                 {currentStep === 6 ? "သဘောတူပါသည်။" : "ရှေ့သို့"}
