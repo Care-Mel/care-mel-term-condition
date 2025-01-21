@@ -7,7 +7,7 @@ import SuccessModal from "./components/SuccessModal";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
-  // console.log(currentStep);
+  console.log(currentStep);
 
   const handleSubmission = async () => {
     // console.log("Handling submission");
@@ -81,11 +81,11 @@ function App() {
             {currentStep !== 7 && (
               <button
                 onClick={() => {
-                  setCurrentStep((prev) => Math.min(prev + 1, 7));
+                  setCurrentStep((prev) => Math.min(prev + 1, 6));
                   handleSubmission();
                 }}
                 className="w-full bg-primary text-white px-4 py-3 rounded-3xl font-bold text-[14px] flex justify-center items-center transition-all duration-300 ease-in-out"
-                disabled={currentStep === 7}
+                // disabled={currentStep === 7}
               >
                 {currentStep === 6 ? "သဘောတူပါသည်။" : "ရှေ့သို့"}
               </button>

@@ -9,7 +9,7 @@ function AgreeForm({ currentStep }) {
 
   return (
     <div className="flex flex-col justify-end gap-5">
-      <div className="flex p-2 bg-white items-center border-2 border-gray-300 rounded-full overflow-hidden shadow-md">
+      <div className="flex p-2 bg-white items-center border-2 border-gray-100 rounded-full overflow-hidden shadow-md">
         <input
           type="text"
           placeholder="နာမည်"
@@ -24,7 +24,7 @@ function AgreeForm({ currentStep }) {
           <FaRegUserCircle size={30} className="text-gray-400 mr-5" />
         </span>
       </div>
-      <div className="flex p-2 bg-white items-center border-2 border-gray-300 rounded-full overflow-hidden shadow-md">
+      <div className="flex p-2 bg-white items-center border-2 border-gray-100 rounded-full overflow-hidden shadow-md">
         <input
           type="text"
           placeholder="မှတ်ပုံတင် နံပါတ်"
