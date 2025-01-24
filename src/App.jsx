@@ -43,7 +43,7 @@ function App() {
         {currentStep === 1 && (
           <div className="flex flex-col justify-end gap-8 mb-10 items-center h-full">
             <img src={logo} alt="logo" className="w-[230px]" />
-            <p className="font-sofia text-secondary text-[20px] mb-10 leading-[1.8]">
+            <p className="font-sofia text-center text-secondary text-[20px] mb-10 leading-[1.8]">
               Care Mel ပလက်ဖောင်းတွင် Caregiver / Nurse Aide များအတွက်
               လိုက်နာရန် စည်းမျဉ်းစည်းကမ်းများ
             </p>
