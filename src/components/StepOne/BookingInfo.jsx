@@ -28,7 +28,7 @@ const BookingInfo = () => {
       <div className="space-y-2">
         {infoList.map((item, index) => (
           <div key={index} className="mb-10">
-            <span className="font-semibold text-[16px] text-secondary">
+            <span className="font-bold text-[16px] text-secondary">
               {item.title}
             </span>
             <div className="pl-4 mt-5">
@@ -39,7 +39,7 @@ const BookingInfo = () => {
                   {/* Added 'items-center' and some margin */}
                   <img src={plus} className="mr-2 mt-3" />
                   {/* Adjusted color */}
-                  <span className="font-bold leading-[36px]">{content}</span>
+                  <span className="font-medium leading-[36px]">{content}</span>
                 </div>
               ))}
             </div>

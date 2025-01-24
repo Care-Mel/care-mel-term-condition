@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sofia: ["Sofia Pro"],
+        myan: ["Myan San"],
       },
       fontSize: {
         header: ["28px"],

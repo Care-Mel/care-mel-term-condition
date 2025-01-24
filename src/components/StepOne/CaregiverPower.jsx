@@ -50,7 +50,7 @@ const CaregiverPower = () => {
       <div className="space-y-2">
         {infoList.map((item, index) => (
           <div key={index} className="mb-10">
-            <span className="font-semibold text-[16px] text-secondary">
+            <span className="font-bold text-[16px] text-secondary">
               {item.title}
             </span>
             <div className="pl-4 mt-5">
@@ -61,7 +61,7 @@ const CaregiverPower = () => {
                   {/* Added 'items-center' and some margin */}
                   <img src={plus} className="mr-2 mt-3" />
                   {/* Adjusted color */}
-                  <span className="font-bold leading-[36px]">{content}</span>
+                  <span className="leading-[36px]">{content}</span>
                 </div>
               ))}
             </div>
@@ -71,13 +71,15 @@ const CaregiverPower = () => {
       <div className="space-y-2 mt-10">
         {ruleList.map((item, index) => (
           <div key={index} className="mb-10">
-            <span className="font-semibold text-[16px] text-secondary">
+            <span className="font-bold text-[16px] text-secondary">
               {item.title}
             </span>
             {item.header && (
               <div className="pl-4 mt-5 flex items-start mb-5">
                 <img src={plus} className="mr-2 mt-3" />
-                <span className="font-bold leading-[32px]">{item.header}</span>
+                <span className="text-[14px] leading-[32px]">
+                  {item.header}
+                </span>
               </div>
             )}
             <div className="pl-4 mt-10">
@@ -90,7 +92,7 @@ const CaregiverPower = () => {
                   {content.body.map((b, i) => (
                     <div key={i} className="flex items-start mb-5">
                       <img src={plus} className="mr-2 mt-3" />
-                      <span className="font-bold leading-[32px]">{b}</span>
+                      <span className="leading-[32px]">{b}</span>
                     </div>
                   ))}
                 </div>
