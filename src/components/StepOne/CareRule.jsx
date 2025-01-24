@@ -30,7 +30,7 @@ const CareRule = () => {
       <div className="space-y-2">
         {ruleList.map((item, index) => (
           <div key={index} className="mb-10">
-            <span className="font-semibold text-[16px] text-secondary">
+            <span className="font-bold text-[16px] text-secondary">
               {item.title}
             </span>
             <div className="pl-4 mt-5">
@@ -44,7 +44,7 @@ const CareRule = () => {
                   {content.body.map((b, i) => (
                     <div key={i} className="flex items-start mb-5">
                       <img src={plus} className="mr-2 mt-3" />
-                      <span className="font-bold leading-[32px]">{b}</span>
+                      <span className="leading-[32px]">{b}</span>
                     </div>
                   ))}
                 </div>
