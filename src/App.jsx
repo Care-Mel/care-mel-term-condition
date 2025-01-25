@@ -23,7 +23,7 @@ function App() {
           NRC,
         };
         const res = await axios.post(
-          "https://care-mel-api.onrender.com/api/v1/term-and-condition",
+          "https://api.caremelmm.com/api/v1/term-and-condition",
           data
         );
         console.log(res);
