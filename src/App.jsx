@@ -96,7 +96,7 @@ function App() {
             {currentStep > 2 && (
               <button
                 onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 1))}
-                className="font-sofia font-bold border-2 border-primary w-full text-primary px-4 py-[16px] font-bold text-[14px] rounded-full mr-2 transition-all duration-300 ease-in-out active:bg-secondary"
+                className="bg-white font-sofia font-bold border-2 border-primary w-full text-primary px-4 py-[16px] font-bold text-[14px] rounded-full mr-2 transition-all duration-300 ease-in-out active:bg-secondary"
               >
                 နောက်ပြန်သွားမယ်
               </button>
