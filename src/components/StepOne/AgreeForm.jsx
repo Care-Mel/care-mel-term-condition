@@ -3,7 +3,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { FaRegAddressCard } from "react-icons/fa6";
 
 function AgreeForm({ currentStep }) {
-  console.log(currentStep);
+  // console.log(currentStep);
   const [name, setName] = useState("");
   const [NRC, setNrc] = useState("");
 
