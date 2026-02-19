@@ -45,7 +45,7 @@ function App() {
       <div className="h-[80vh]">
         {currentStep === 1 && (
           <div className="flex flex-col justify-end gap-8 mb-10 items-center h-full">
-            <img src="./logo.svg" alt="" />
+            <img src="./logo.svg" alt="logo" />
             <p className="text-center font-bold text-secondary text-[20px] mb-10 leading-[1.8]">
               Healthy Nara ပလက်ဖောင်းတွင် Caregiver / Nurse Aide များအတွက်
               လိုက်နာရန် စည်းမျဉ်းစည်းကမ်းများ

@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sofia: ["Sofia Pro"],
-        myan: ["Myan San"],
+        sofia: ["Sofia Pro", "Inter", "sans-serif"],
+        myan: ["Myan San", "Inter", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       fontSize: {
         header: ["28px"],
