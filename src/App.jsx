@@ -2,6 +2,7 @@ import { useState } from "react";
 // import Stepper from "./components/Stepper";
 import axios from "axios";
 import StepperForm from "./components/StepperForm";
+import logo from "./assets/image/logo.svg";
 // import { ReactComponent as Logo } from "./assets/image/logo.svg";
 import SuccessModal from "./components/SuccessModal";
 import AlertModal from "./components/AlertModal";
@@ -45,7 +46,7 @@ function App() {
       <div className="h-[80vh]">
         {currentStep === 1 && (
           <div className="flex flex-col justify-end gap-8 mb-10 items-center h-full">
-            <img src="./logo.svg" alt="logo" />
+            <img src={logo} alt="logo" />
             <p className="text-center font-bold text-secondary text-[20px] mb-10 leading-[1.8]">
               Healthy Nara ပလက်ဖောင်းတွင် Caregiver / Nurse Aide များအတွက်
               လိုက်နာရန် စည်းမျဉ်းစည်းကမ်းများ
