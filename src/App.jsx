@@ -4,10 +4,12 @@ import axios from "axios";
 import StepperForm from "./components/StepperForm";
 // import { ReactComponent as Logo } from "./assets/image/logo.svg";
 import SuccessModal from "./components/SuccessModal";
+import AlertModal from "./components/AlertModal";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
-  console.log(currentStep);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const handleSubmission = async () => {
     // console.log("Handling submission");
@@ -23,17 +25,18 @@ function App() {
           NRC,
         };
         const res = await axios.post(
-          "https://api.healthynara.com/api/v1/term-and-condition",
+          import.meta.env.VITE_API_URL + "term-and-condition",
           data,
         );
-        console.log(res);
+        // console.log(res);
         if (res.data.code === 201) {
           // console.log("Form submitted successfully");
           localStorage.clear();
           setCurrentStep(7);
         }
       } else {
-        alert("နာမည်နှင့် NRC နံပါတ်ကို ထည့်ပါ");
+        setAlertMessage("နာမည်နှင့် NRC နံပါတ်ကို ထည့်ပါ");
+        setShowAlert(true);
       }
     }
   };
@@ -93,6 +96,13 @@ function App() {
           </div>
         )}
       </div>
+
+      {showAlert && (
+        <AlertModal
+          message={alertMessage}
+          onClose={() => setShowAlert(false)}
+        />
+      )}
     </div>
   );
 }
